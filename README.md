@@ -44,7 +44,7 @@ ENTRYPOINT ["java","-jar","/usr/app/spring-boot-backend-0.0.1-SNAPSHOT.jar"]
 7. Push taggen til azure : ```docker push [tagName]``` Hvis du blir spurt om å logge inn kjør : <br/>```az acr login --name [acrName]```
 8. Lag en container instance, til det trenger vi dine azure container registry credentials
 9. ```az acr credential show --name <acrName>```
-10. ```az container create --resource-group myResourceGroup --name spring-app --image tagName --dns-name-label spring-app --ports 8989``` du velger selv hva ```--dns-name-label``` skal være, her er den satt til `spring-app`
+10. ```az container create --resource-group myResourceGroup --name spring-app --image tagName --dns-name-label spring-app --ports 8989``` du velger selv hva ```--dns-name-label``` skal være, her er den satt til `spring-app` den må være unik
 11. Du kan nå teste at deployen gikk ok ved å sende et request til http://[dns-name-label].westeurope.azurecontainer.io:8989/azure-service/greeting
 <br />
 
