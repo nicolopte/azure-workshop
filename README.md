@@ -66,7 +66,7 @@ COPY ./etc/nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder ./app/build /usr/share/nginx/html
 ```
 2. Prøv deg frem og lag en GET request som henter responsen fra backend servicen og viser det i react appen, du kan se hvilken ip og port backend servicen kjører på ved å kjøre ```az container show --resource-group myResourceGroup --name spring-app --query "{ipAddress:ipAddress.ip,Port:ipAddress.ports[0].port}" --out table```
-3. Bygg ´Dockerfilen´ på samme måte som du gjorde med backend, bare pass på å kalle imaget noe annet, for eks ```docker build -t react-app .```
+3. Bygg `Dockerfilen` på samme måte som du gjorde med backend, bare pass på å kalle imaget noe annet, for eks ```docker build -t react-app .```
 4. Kjør kontaineren og test at appen funker
 <br/>
 
